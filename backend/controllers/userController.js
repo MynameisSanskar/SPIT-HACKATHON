@@ -27,7 +27,7 @@ const signupUser = async (req, res) => {
 let secret=password
   try {
     const user = await User.signup(userType,email, password,username)
-    // const secret=user.password;
+    const secret=user.password;
     // let pass =user.password;
     console.log(secret)
       const r = await axios.post(
