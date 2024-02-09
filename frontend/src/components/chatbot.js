@@ -5,9 +5,9 @@ import { useState } from "react";
 
 export default function ChatBot(){
     const [isVisible,setIsVisible]=useState(false)
-    console.log("chatbot rendered")
+    // console.log("chatbot rendered")
     return(
-        <div className="fixed bottom-0 right-0 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
  style={{margin:'15px',width:'fit-content',backgroundColor:'aliceblue'}}>
            {!isVisible && <div className="flex"><img className="rounded-full" src="https://cdn-icons-png.freepik.com/256/8943/8943377.png?ga=GA1.1.1255800410.1704448219&semt=ais" style={{width:75,height:75,margin:10}}/>
             <button onClick={()=>{setIsVisible(true)}} className=" text-xl flex justify-items-center  rounded-xl" style={{backgroundColor:'#5094f5',border:'solid 2px black',margin:20,borderRadius:'1.5rem',padding:10}}>Start Chat</button></div>}

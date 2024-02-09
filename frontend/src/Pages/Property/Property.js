@@ -47,31 +47,33 @@ function Property(){
       navigate(`/properties/${id}`)
     };
   
+    const fetchUsers = async () => {
+      try {
+        
+        const response = await fetch("http://localhost:3001");
+        const json = await response.json();
+        if (response.ok) {
+          console.log(property);
+          setUsers(json)
+          dispatch({type:'SET_PROPERTIES',payload:json}) // Assuming the 'data' key holds the user information
+        }
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    };
+  console.log(SearchData)
+    if(SearchData===""){
+    
+       
+          // handlebutton1()
+          // handlebutton2()
+          // handlebutton3()
+         fetchUsers()
+       
+        }
+      
   
-  
-    // useEffect(() => {
-  
-    //   const fetchUsers = async () => {
-    //     try {
-          
-    //       const response = await fetch("http://localhost:3001");
-    //       const json = await response.json();
-    //       if (response.ok) {
-    //         console.log(property);
-    //         setUsers(json)
-    //         dispatch({type:'SET_PROPERTIES',payload:json}) // Assuming the 'data' key holds the user information
-    //       }
-    //     } catch (error) {
-    //       console.error("Error fetching users:", error);
-    //     }
-    //   };
-   
-    //   handlebutton1()
-    //   handlebutton2()
-    //   handlebutton3()
-    //  fetchUsers()
-   
-    // }, []);
+    //   , []);
   
   // const handleButtonClick = async () => {
   //     console.log('Button clicked');
@@ -91,44 +93,40 @@ function Property(){
   const handlebutton3=()=>{
     setButton3(!button3)
   }
-return(
-
-
-
-    <>
-    
- 
+return (
+  <>
     <div className="App">
-    
-    
-  
-    
-    <Search  />
-    
-    
-    <div class="flex">
-    <div class="flex flex-row flex-wrap w-3/4 items-start justify-start">
-        {property && property.map((user) => {
-            return (
-              <div onClick={()=>handleCard(user._id)}>
-             
-              <Card
-               button={"Contact"}
-               key={user._id}
-                name={user.name}
-                location={user.location}
-                img={user.img.img1}
-                area={user.area}
-                tag={user.tag}
-                star={user.star}
-                price={user.price}
-                               
-              />
-              </div>
-            );
-          })}
-    
-    {/* {property && property.map((user) => {
+      <div
+        style={{
+          backgroundImage:
+            "url('https://img.freepik.com/free-vector/hand-drawn-buildings_23-2147514069.jpg?w=996&t=st=1707383992~exp=1707384592~hmac=b3476b294c38c5495b162a202cef0037af5c8a77ef0388b2f991560d476413c4')",
+        }}
+      >
+        <Search />
+      </div>
+
+      <div class="flex">
+        <div class="flex flex-row flex-wrap w-3/4 items-start justify-start">
+          {property &&
+            property.map((user) => {
+              return (
+                <div onClick={() => handleCard(user._id)}>
+                  <Card
+                    button={"Contact"}
+                    key={user._id}
+                    name={user.name}
+                    location={user.location}
+                    img={user.img.img1}
+                    area={user.area}
+                    tag={user.tag}
+                    star={user.star}
+                    price={user.price}
+                  />
+                </div>
+              );
+            })}
+
+          {/* {property && property.map((user) => {
             return (
               <div onClick={()=>handleCard(user._id)}>
              
@@ -147,54 +145,41 @@ return(
               </div>
             );
           })} */}
-        
-         
-    </div>  
-    
-    <div class="flex drop-shadow-slate-50 hover:opacity-100 w-1/4 flex-col pr-4">
-    
-    
-    
-    
-     
-    
-     
-      <div  id="map" class="flex justify-end items-start mt-4  shadow-xl rounded-xl overflow-hidden">
-    <Map/>
-      </div>
-      
-    
-    
-      <div id="video" class="flex justify-end items-start mt-8 h-100 shadow-xl overflow-hidden ">
-      <Video/>
-    </div>
-    <div id="chart" class=" mt-6 shadow-xl flex justify-end items-center overflow-hidden">
-      <Chart/>
-    </div>
-    <div id="gallery" class=" mt-5 shadow-xl md-2 flex justify-end items-center overflow-hidden">
-    <ChatBot/>
-    </div>
-    
-    
-    
-    
-    </div>
-    </div>
-    
-    
-    
-    <div class="mt-3">
- 
-    </div>
-    
-    
-    
-    </div>
-    
-    
-    </>
+        </div>
 
-)
+        <div class="flex drop-shadow-slate-50 hover:opacity-100 w-1/4 flex-col pr-4">
+          <div
+            id="map"
+            class="flex justify-end items-start mt-4  shadow-xl rounded-xl overflow-hidden"
+          >
+            <Map />
+          </div>
+
+          <div
+            id="video"
+            class="flex justify-end items-start mt-8 h-100 shadow-xl overflow-hidden "
+          >
+            <Video />
+          </div>
+          <div
+            id="chart"
+            class=" mt-6 shadow-xl flex justify-end items-center overflow-hidden"
+          >
+            <Chart />
+          </div>
+          <div
+            id="gallery"
+            class=" mt-5 shadow-xl md-2 flex justify-end items-center overflow-hidden"
+          >
+            <ChatBot />
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-3"></div>
+    </div>
+  </>
+);
 
 
 

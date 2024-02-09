@@ -40,7 +40,9 @@ export default function () {
         <Features2 />
         <Rent />
         <Reviews />
-        <ChatBot />
+        <div className="fixed bottom-0 right-0">
+          <ChatBot />
+        </div>
 
         {/* <Footer/> */}
 

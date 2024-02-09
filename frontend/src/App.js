@@ -44,46 +44,51 @@ console.log(user);
       
       
       <BrowserRouter>
-  
+    
       <Routes>
        <Route path="/" element={<Page/>}>
         {(user && user.userType==="Admin")?(<Route index element={<Admin/>}/>):<Route index element={<Home/>}/>} 
-       
+       <Route path="reminder" element={<Reminder/>}/>
        <Route path="home" element={<Home/>}/>
        <Route path="about" element={<About/>}/>
        <Route path="contact" element={<Contact/>}/>
        <Route path="reviews" element={<Reviews/>}/>
        <Route path="services" element={<Services/>}/>
-       <Route path="profile" element={<Profile/>}/>
+       {user && <Route path="profile" element={<Profile/>}/>}
       
-       <Route path="signup" element={<Signup  onAuth={(chatUser)=>{setchatUser(chatUser)}}/>}/>
+       {!user && <Route path="signup" element={<Signup  onAuth={(chatUser)=>{setchatUser(chatUser)}}/>}/>}
        <Route path="terms&condition" element={<Terms/>}/>
       
-       <Route path='properties'
-      element={<Property/>}>
-        
-      </Route>
+       <Route path='properties' element={<Property/>}></Route>
       <Route path='properties/:id' element={<ProductDetail/>}></Route>
-    
+     
+      {/* {(user && user.userType==="Admin")&& <Route path="reminder" element={<Reminder/>}/>} */}
+
+      {(user && user.userType==="Admin") &&
+      <Route path='/' element={<Admin/>}>
+      <Route path="Dashboard" element={<Cards/>}> </Route>
+      <Route path="listproperty" element={<PropertyForm/>}></Route>
+      <Route path="delete" element={<DeleteAdmin/>}></Route>
+      <Route path="update" element={<UpdateAdmin/>}></Route>
+      <Route path="update/updateForm/:id" element={<UpdateForm/>}></Route></Route>}
+
        </Route>
        
-       <Route path="login" element={<Login/>}/>
+       {!user && <Route path="login" element={<Login/>}/>}
       
-       <Route path="chat" element={<Chatmiddleware chatUser={user} setchatUser={setchatUser}/>}/>
-       <Route path="chatsPage" element={<ChatsPage />}/>
-       <Route path="reminder" element={<Reminder/>}/>
+       {user && <Route path="chat" element={<Chatmiddleware chatUser={user} setchatUser={setchatUser}/>}/>}
+       {user && <Route path="chatsPage" element={<ChatsPage />}/>}
+    
+
+      {/* <Route path="admin" element={<Admin/>}> */}
 
 
-      <Route path="admin" element={<Admin/>}>
-
-
-       <Route path="Dashboard" element={<Cards/>}> </Route>
-       <Route path="listproperty" element={<PropertyForm/>}></Route>
-       <Route path="delete" element={<DeleteAdmin/>}></Route>
-       <Route path="update" element={<UpdateAdmin/>}></Route>
-       <Route path="update/updateForm/:id" element={<UpdateForm/>}></Route>
+     
+    
+  
+       
  
- </Route> 
+
      
     </Routes>
 

@@ -297,11 +297,11 @@ const PropertyForm = () => {
             </div>
 
             <div class="flex justify-between ">
-  <div class="w-full md:w-3/5">
+  <div class="w-full ">
     <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
       Category
     </label>
-    <select id="category" style={{width:"278pxs"}}class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+    <select id="category" style={{width:"308px"}}class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
       <option value="1">*</option>
       <option value="2">**</option>
       <option value="3">***</option>
@@ -310,11 +310,11 @@ const PropertyForm = () => {
     </select>
   </div>
 
-  <div class="w-full md:w-3/5 ">
+  <div class="w-full ml-6">
     <label for="amenities" class="block  mb-2 text-sm font-medium text-gray-900 dark:text-white">
       Amenities
     </label>
-    <select id="amenities" style={{width:"278pxs"}} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+    <select id="amenities" style={{width:"308px"}} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
       <option value="1">Electricity</option>
       <option value="2">Cleaning</option>
       <option value="3">Washing</option>
@@ -322,9 +322,8 @@ const PropertyForm = () => {
       <option value="5">Gas</option>
     </select>
   </div>
-</div>
-
-            <div class="sm:col-span-2">
+</div>   
+              <div class="sm:col-span-2">
               <label
                 for="name"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
