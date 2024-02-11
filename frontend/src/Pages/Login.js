@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
+import bg from "../asssets/login.jpeg"
 
 import Loginlottie from "../lotties/Loginlottie";
 
@@ -16,7 +17,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center " style={{backgroundImage:"url('https://img.freepik.com/premium-photo/high-angle-view-toy-against-blue-sky_1048944-25355017.jpg?size=626&ext=jpg&ga=GA1.1.1255800410.1704448219&semt=ais')",backgroundSize:'cover'}}>
+    <div className="flex items-center justify-center h-screen " style={{backgroundImage:"url('https://t4.ftcdn.net/jpg/02/13/69/43/360_F_213694320_OwiuSafBog15ZThj42x4nelKXBUtZC0o.jpg')",backgroundSize:'cover'}}>
     <div className="w-fit bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" style={{ margin: '45px',width:'70%' }}>
       <section className="bg-white dark:bg-gray-900">
         <div className="flex flex-col-reverse lg:flex-row max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0" style={{margin:50}}>

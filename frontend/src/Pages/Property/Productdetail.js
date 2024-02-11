@@ -5,35 +5,36 @@ import { usePropetiesContext } from "../../hooks/usePropertyContext";
 // import video from '../pexels_videos_2646392 (1080p).mp4'
 
 function ProductDetail() {
-  const { property, dispatch } = usePropetiesContext();
-  const [details, setDetails] = useState({});
-  const [loading, setLoading] = useState(true);
-  const { id } = useParams();
+  // const { property, dispatch } = usePropetiesContext();
+  // const [details, setDetails] = useState({});
+  // const [loading, setLoading] = useState(true);
+  // const { id } = useParams();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        console.log(id);
-        const response = await fetch(`http://localhost:3001/${id}`);
-        const json = await response.json();
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       console.log(id);
+  //       const response = await fetch(`http://localhost:3001/${id}`);
+  //       const json = await response.json();
 
-        if (response.ok) {
-          //   dispatch({ type: 'SET_PROPERTY', payload: json });
-          console.log(json);
-          setDetails(json);
-          setLoading(false);
-        }
-      } catch (error) {
-        console.error("Error while fetching data:", error);
-      }
-    };
-    console.log("Details :", json);
-    fetchData();
-  }, []);
-  // console.log(details.img.img1);
-  // const { img: { img1, img2, img3, img4, img5 } } = details;
+  //       if (response.ok) {
+  //         //   dispatch({ type: 'SET_PROPERTY', payload: json });
+  //         console.log(json);
+  //         setDetails(json);
+  //         setLoading(false);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error while fetching data:", error);
+  //     }
+  //   };
+  //   console.log("Details :", json);
+  //   fetchData();
+  // }, []);
+  // // console.log(details.img.img1);
+  // // const { img: { img1, img2, img3, img4, img5 } } = details;
   const items = [];
-  let i = details.star;
+  // let i = details.star;
+  let i=5;
   while (i > 0) {
     items.push(
       <svg
@@ -49,33 +50,35 @@ function ProductDetail() {
     i--;
   }
 
-  if (loading) {
-    return <h1>Loading....</h1>;
-  }
+  // if (loading) {
+  //   return <h1>Loading....</h1>;
+  // }
 
   return (
     <div>
       <section
         className="overflow-hidden h-full py-11 font-poppins dark:bg-gray-800"
-        style={{ backgroundSize: "cover" }}
+        style={{ backgroundSize: "cover",backgroundImage:"url('https://www.gaurikohli.com/cdn/shop/articles/India_Handicraft_Exporters-A_6.jpg?v=1679305506&width=2560')" }}
       >
         <div
           className="max-w-6xl px-4 py-4 mx-auto lg:py-8 md:px-6 w-fitbg-white border border-gray-200 bg-gradient-to-r from-blue-100 to-blue-400 rounded-lg shadow dark:bg-gray-800"
-          style={{ marginTop: "40px" }}
+          style={{ marginTop: "40px",backgroundImage:"url('https://img.freepik.com/free-photo/vintage-grunge-paper-background_1048-10911.jpg?size=626&ext=jpg&ga=GA1.1.1255800410.1704448219&semt=ais')",backgroundSize: "cover" }}
         >
           <div class="flex flex-wrap -mx-4">
             <div class="w-full px-4 md:w-1/2 ">
               <div class="sticky top-0 z-50 overflow-hidden ">
-                {details.img.img1 && (
-                  <div className="relative mb-6 rounded-md lg:mb-10 lg:h-2/4 overflow-hidden group h-[287]">
+                {/* {details.img.img1 && ( */}
+                  <div c lassName="relative mb-6 rounded-full lg:mb-10 lg:h-2/4 overflow-hidden group ">
                     <img
-                      src={details.img.img1}
+                      // src={details.img.img1}
+                      src="https://t3.ftcdn.net/jpg/05/66/34/10/360_F_566341036_f2mCzWyHi9I4aMOSSiy1XUUhvEqdUKJ1.jpg"
                       alt=""
-                      className="object-cover rounded-md h-[287] w-full lg:h-full transition-transform transform scale-100 group-hover:scale-105"
+                      style={{width:450,height:450,marginLeft:30}}
+                      className="object-cover rounded-full  w-full lg:h-full transition-transform transform scale-100 group-hover:scale-105"
                     />
                   </div>
-                )}
-                <div class="flex-wrap hidden md:flex ">
+                {/* )} */}
+                {/* <div class="flex-wrap hidden md:flex ">
                   <div class="w-1/2 p-2  sm:w-1/4 rounded-md">
                     <a href="#" class="block">
                       <img
@@ -112,14 +115,14 @@ function ProductDetail() {
                       />
                     </a>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
             <div class="w-full px-4 md:w-1/2  ">
               <div>
                 <div
-                  class="mb-8 border border-gray-200 rounded-lg shadow dark:border-gray-700 h-[301]"
-                  style={{ backgroundColor: "#f7f2d3", padding: "20px" }}
+                  // class="mb-8  rounded-lg shadow "
+                  style={{ padding: "20px" }}
                 >
                   {/* <span class="text-lg font-medium text-rose-500 dark:text-rose-200">
                     New
@@ -129,123 +132,75 @@ function ProductDetail() {
                   </h2>
 
                   <div class="flex items-center space-x-1 rtl:space-x-reverse">
-                    {items}
+                    {/* {items} */}
+                    
                     <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
-                      {Math.floor(details.star)}
+                      {/* {Math.floor(details.star)} */}
+                      5
                       <span>.0</span>
                     </span>
                   </div>
 
-                  <p className="max-w-md mb-2 text-gray-700 dark:text-gray-400 font-bold text-2xl">
-                    {details.name}
+                  <p className=" font-extrabold max-w-md mb-2 text-gray-700 dark:text-gray-400  text-4xl pt-5">
+                    {/* {details.name} */}
+                    Name
                   </p>
 
-                  <p class="font-thin">{details.area}SqFt.</p>
-                  <p class="font-thin">{details.bhks}SqFt.</p>
+                  <p class="font-semibold py-6 text-2xl">
+                    {/* {details.area} */}
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quia voluptatum officiis sint libero iusto ullam atque ipsum ducimus voluptate!</p>
+                  
                   {/* <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">{details.tag[0]}</span>
             <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">{details.tag[1]}</span>
             <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">{details.tag[2]}</span> */}
-                  <p className="max-w-md mb-8 text-gray-700 dark:text-gray-400 text-xl">
-                    {details.location}
-                  </p>
+                  
 
-                  <div className="max-w-md mb-8 mt-2">
+                  <div className="max-w-md mb-4 mt-2">
                     <p className="text-4xl font-bold text-gray-700 dark:text-gray-400 transition-transform transform hover:scale-105">
-                      <span>₹{details.price}</span>
+                      {/* <span>₹{details.price}</span> */}
+                      <span>₹500</span>
                       <span className="text-base font-normal text-gray-500 line-through dark:text-gray-400"></span>
                     </p>
                   </div>
 
-                  {/* <p class="text-green-600 dark:text-green-300 ">7 in stock</p> */}
+<form class="max-w-xs mb-3">
+    <label for="counter-input" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Choose quantity:</label>
+    <div class="relative flex items-center">
+        <button type="button" id="decrement-button" data-input-counter-decrement="counter-input" class="flex-shrink-0 bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+            <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
+            </svg>
+        </button>
+        <input type="text" id="counter-input" data-input-counter class="flex-shrink-0 text-gray-900 dark:text-white border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[2.5rem] text-center" placeholder=""  required/>
+        <button type="button" id="increment-button" data-input-counter-increment="counter-input" class="flex-shrink-0 bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+            <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+            </svg>
+        </button>
+    </div>
+</form>
+   <a href="/" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+Add to cart
+</a>
+
+
+
+
+
+                  
                 </div>
-                {/* <div class="flex items-center mb-8">
-                            <h2 class="w-16 mr-6 text-xl font-bold dark:text-gray-400">
-                                Colors:</h2>
-                            <div class="flex flex-wrap -mx-2 -mb-2">
-                                <button
-                                    class="p-1 mb-2 mr-2 border border-transparent hover:border-blue-400 dark:border-gray-800 dark:hover:border-gray-400 ">
-                                    <div class="w-6 h-6 bg-cyan-300"></div>
-                                </button>
-                                <button
-                                    class="p-1 mb-2 mr-2 border border-transparent hover:border-blue-400 dark:border-gray-800 dark:hover:border-gray-400">
-                                    <div class="w-6 h-6 bg-green-300 "></div>
-                                </button>
-                                <button
-                                    class="p-1 mb-2 border border-transparent hover:border-blue-400 dark:border-gray-800 dark:hover:border-gray-400">
-                                    <div class="w-6 h-6 bg-red-200 "></div>
-                                </button>
-                            </div>
-                        </div> */}
-                {/* <div class="flex items-center mb-8">
-                            <h2 class="w-16 text-xl font-bold dark:text-gray-400">
-                                Size:</h2>
-                            <div class="flex flex-wrap -mx-2 -mb-2">
-                                <button
-                                    class="py-1 mb-2 mr-1 border w-11 hover:border-blue-400 dark:border-gray-400 hover:text-blue-600 dark:hover:border-gray-300 dark:text-gray-400">XL
-                                </button>
-                                <button
-                                    class="py-1 mb-2 mr-1 border w-11 hover:border-blue-400 hover:text-blue-600 dark:border-gray-400 dark:hover:border-gray-300 dark:text-gray-400">S
-                                </button>
-                                <button
-                                    class="py-1 mb-2 mr-1 border w-11 hover:border-blue-400 hover:text-blue-600 dark:border-gray-400 dark:hover:border-gray-300 dark:text-gray-400">M
-                                </button>
-                                <button
-                                    class="py-1 mb-2 mr-1 border w-11 hover:border-blue-400 hover:text-blue-600 dark:border-gray-400 dark:hover:border-gray-300 dark:text-gray-400">XS
-                                </button>
-                            </div>
-                        </div> */}
-                {/* <div class="w-32 mb-8 ">
-                            <label for=""
-                                class="w-full text-xl font-semibold text-gray-700 dark:text-gray-400">Quantity</label>
-                            <div class="relative flex flex-row w-full h-10 mt-4 bg-transparent rounded-lg">
-                                <button
-                                    class="w-20 h-full text-gray-600 bg-gray-300 rounded-l outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-400">
-                                    <span class="m-auto text-2xl font-thin">-</span>
-                                </button>
-                                <input type="number"
-                                    class="flex items-center w-full font-semibold text-center text-gray-700 placeholder-gray-700 bg-gray-300 outline-none dark:text-gray-400 dark:placeholder-gray-400 dark:bg-gray-900 focus:outline-none text-md hover:text-black"
-                                    placeholder="1"/>
-                                <button
-                                    class="w-20 h-full text-gray-600 bg-gray-300 rounded-r outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 dark:bg-gray-900 hover:text-gray-700 hover:bg-gray-400">
-                                    <span class="m-auto text-2xl font-thin">+</span>
-                                </button>
-                            </div>
-                        </div> */}
+                
                 <div class="flex flex-wrap items-center -mx-4 ">
-                  {/* <div class="w-full px-4 mb-4 lg:w-1/2 lg:mb-0">
-                                <button
-                                    class="flex items-center justify-center w-full p-4 text-blue-500 border border-blue-500 rounded-md dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 hover:text-gray-100 dark:bg-blue-600 dark:hover:bg-blue-700 dark:hover:border-blue-700 dark:hover:text-gray-300">
-                                    
-                                </button>
-                            </div> */}
-                  {/* <div class="w-full px-4 mb-4 lg:mb-0 lg:w-1/2">
-                                <button
-                                    class="flex items-center justify-center w-full p-4 text-blue-500 border border-blue-500 rounded-md dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 hover:text-gray-100 dark:bg-blue-600 dark:hover:bg-blue-700 dark:hover:border-blue-700 dark:hover:text-gray-300">
-                                    Add to wishlist
-                                </button>
-                            </div> */}
+                  
                 </div>
               </div>
             </div>
           </div>
-          <div class="flex h-[121] w-full" style={{ marginTop: "20px" }}>
-            <div style={{ width: "100%", margin: "10px" }}>
-              <h1 class="font-bold text-2xl p-2 ">Description:</h1>
-              <p class="mb-2 text-black-500 dark:text-gray-400 p-2 font-extrabold">
-                {details.description}
-              </p>
-            </div>
-            {/* <div style={{ width: "50%" }}>
-             <Map/>
-            </div> */}
-          </div>
+          
         </div>
       </section>
     </div>
   );
 }
-// Keshav me soone jaa rha hu
-
-//Tu continue kar no issue
 
 export default ProductDetail;

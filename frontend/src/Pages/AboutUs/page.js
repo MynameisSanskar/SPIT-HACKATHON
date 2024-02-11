@@ -21,11 +21,7 @@ function About() {
                 About Us
               </h1>
               <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-                tempore amet molestiae id consequuntur ducimus voluptatum, a cum
-                sequi est iure ipsa modi ex perferendis temporibus fuga impedit
-                odio. In, at porro. Deleniti alias suscipit accusamus repellat.
-                Aliquam, facilis dolor!
+                Crafted Dreams: At [Your Company Name], we are driven by a passion for promoting artisanal excellence. With a commitment to preserving cultural heritage, we provide a platform that celebrates the creativity and craftsmanship of artisans worldwide. Join us in the journey of artistry, where tradition meets innovation.
               </p>
 
               <button

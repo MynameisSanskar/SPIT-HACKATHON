@@ -1,19 +1,16 @@
 import React from "react";
-
+import bg from "../../asssets/puppets.jpeg"
 import '../../CSS/index.css';
-import axios from 'axios';
+// import axios from 'axios';
 import Card from '../../components/Card'
 import Video from '../../components/List';
 import Chart from '../../components/Charts'
-import Gallery from '../../components/Airedirect'
 import Navbar from '../../components/Navbar';
 import Map from '../../components/Map'
 import { useEffect, useState } from 'react';
 import Footer from '../../components/Footer';
 import Search from '../../components/Search';
-import ChatBot from "../../components/chatbot";
-// import ProductDetail from './Productdetail';
-// import PropertyForm from '../../components/PropertyForm'
+
 import { usePropetiesContext } from '../../hooks/usePropertyContext';
 import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
@@ -31,19 +28,7 @@ function Property(){
     const navigate=useNavigate()
   // for getting more details of property enlarged card
     const handleCard=async(id)=>{
-    //   alert(id);
-    //   try {
-    //     const response =await fetch(`http://localhost:3001/${id}`)
-    //     const json =await response.json()
-    //     if(response.ok)
-    //     { 
-           
-    //       dispatch({type:'SET_PROPERTY',payload:json})
-  
-    //     } 
-    //   } catch (error) {
-    //     console.log("Error while getting Card by Id",error);
-    //   }
+   
       navigate(`/properties/${id}`)
     };
   
@@ -96,10 +81,10 @@ function Property(){
 return (
   <>
     <div className="App">
-      <div
+      <div className="flex justify-center"
         style={{
           backgroundImage:
-            "url('https://img.freepik.com/free-vector/hand-drawn-buildings_23-2147514069.jpg?w=996&t=st=1707383992~exp=1707384592~hmac=b3476b294c38c5495b162a202cef0037af5c8a77ef0388b2f991560d476413c4')",
+            `url(${bg})`, height:300,backgroundSize:'cover',backgroundPosition:'top'
         }}
       >
         <Search />
@@ -107,24 +92,24 @@ return (
 
       <div class="flex">
         <div class="flex flex-row flex-wrap w-3/4 items-start justify-start">
-          {property &&
+          {/* {property &&
             property.map((user) => {
               return (
-                <div onClick={() => handleCard(user._id)}>
-                  <Card
-                    button={"Contact"}
-                    key={user._id}
-                    name={user.name}
-                    location={user.location}
-                    img={user.img.img1}
-                    area={user.area}
-                    tag={user.tag}
-                    star={user.star}
-                    price={user.price}
-                  />
-                </div>
+                // <div onClick={() => handleCard(user._id)}>
+                //   <Card
+                //     button={"Contact"}
+                //     key={user._id}
+                //     name={user.name}
+                //     location={user.location}
+                //     img={user.img.img1}
+                //     area={user.area}
+                //     tag={user.tag}
+                //     star={user.star}
+                //     price={user.price}
+                //   />
+                // </div>
               );
-            })}
+            })} */}
 
           {/* {property && property.map((user) => {
             return (
@@ -171,7 +156,6 @@ return (
             id="gallery"
             class=" mt-5 shadow-xl md-2 flex justify-end items-center overflow-hidden"
           >
-            <ChatBot />
           </div>
         </div>
       </div>
@@ -179,6 +163,7 @@ return (
       <div class="mt-3"></div>
     </div>
   </>
+  
 );
 
 

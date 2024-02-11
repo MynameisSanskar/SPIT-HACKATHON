@@ -1,5 +1,5 @@
 
-require('dotenv').config()
+// require('dotenv').config()
 const CardsRoutes = require("./routes/routes.js")
 const express = require('express')
 const mongoose = require('mongoose')
@@ -63,11 +63,11 @@ app.post("/chat/login", async (req, res) => {
   }
 });
 // connect to db
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect('mongodb+srv://webgeniusai:erfgZ4woRw1838os@sanskar.7cbexxe.mongodb.net/WebGeniusAi')
   .then(() => {
     // listen for requests
-    app.listen(process.env.PORT, () => {
-      console.log('connected to db & listening on port', process.env.PORT)
+    app.listen(3001, () => {
+      console.log('connected to db & listening on port', 3001)
     })
   })
   .catch((error) => {

@@ -1,5 +1,5 @@
 import Lottie from "react-lottie";
-import animationData from "./reminder.json";
+import animationData from "../lotties/Animation - 1707575823618.json";
 
 import React from "react";
 
@@ -14,8 +14,8 @@ export default function Loginlottie() {
   };
 
   return (
-    <div >
-<Lottie options={defaultOptions} height={200} width={200} />
+    <div style={{marginLeft:50}}>
+<Lottie options={defaultOptions} height={728} width={'100%'} />
     </div> 
   
   );

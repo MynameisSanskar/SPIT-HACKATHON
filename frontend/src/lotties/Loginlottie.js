@@ -1,5 +1,5 @@
 import Lottie from "react-lottie";
-import animationData from "./loginlottie.json";
+import animationData from "./login.json";
 
 import React from "react";
 

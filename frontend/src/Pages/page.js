@@ -10,7 +10,7 @@ function Page() {
     <div >
       <Navbar style={{ position: "sticky", zIndex: 50 }} />
       <Outlet />
-     {(user && !user.userType==="Admin") && <Footer />}
+     <Footer />
     </div>
   );
 }

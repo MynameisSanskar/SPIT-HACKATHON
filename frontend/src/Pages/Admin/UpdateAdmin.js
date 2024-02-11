@@ -53,7 +53,8 @@ const handleCard=async(id)=>{
                key={user._id}
                 name={user.name}
                 location={user.location}
-                img={user.img.img1}
+                img={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg3mqKsr4Mlz-ozDfwieaDz-HHT3kuGT1Mow&usqp=CAU"}
+                area={user.area}
                 tag={user.tag}
                 star={user.star}
                 price={user.price}

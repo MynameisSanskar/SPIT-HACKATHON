@@ -7,16 +7,8 @@ import {
   Link,
   NavLink,
 } from "react-router-dom";
-import About from "../Pages/AboutUs/page.js";
-import Home from "../Pages/Homepage/Home.js";
-import Contact from "../Pages/ContactUs/contact";
-import Reviews from "../Pages/ReviewsPage/Reviews.js";
-import Services from "../Pages/Services/services";
-import Profile from "../Pages/Profile/Profile";
 import logo from "../asssets/logo.png";
-import Terms from "../Pages/Terms&Condition/page.js";
 import { useAuthContext } from "../hooks/useAuthContext.js";
-import { type } from "@testing-library/user-event/dist/type/index.js";
 import { useLogout } from "../hooks/useLogout.js";
 
 export default function Navbar() {
@@ -31,7 +23,7 @@ export default function Navbar() {
 
   console.log("isVisible:", isVisible);
   return (
-    <div style={{position:'sticky',zIndex:50}}>
+    <div style={{position:'sticky',zIndex:50,backgroundColor:'transparent'}}>
        <nav class="bg-white border-gray-200 dark:bg-gray-800  ">
       <div class=" flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -41,7 +33,9 @@ export default function Navbar() {
           </span>
         </a>
         {user && (
-          <div className=" justify-center items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse relative">
+          <div className="  flex justify-center items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse relative">
+            <a href="/cart" style={{marginRight:30}}><img src="https://cdn-icons-png.freepik.com/256/1136/1136143.png?ga=GA1.1.1255800410.1704448219&semt=ais" alt="" style={{width:35,height:35}}/></a>
+            
             <button
               onClick={handleClick}
               type="button"
@@ -53,6 +47,7 @@ export default function Navbar() {
               style={{ position: "relative" }}
             >
               <span className="sr-only">Open user menu</span>
+              
               <img
                 className="w-8 h-8 rounded-full"
                 src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png"
@@ -82,14 +77,7 @@ export default function Navbar() {
                       Profile
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      to="/reminder"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                    >
-                      Reminders
-                    </Link>
-                  </li>
+                  
 
                   <li>
                     <Link
@@ -101,6 +89,7 @@ export default function Navbar() {
                       Log out
                     </Link>
                   </li>
+                  
                 </ul>
               </div>
             )}
@@ -231,7 +220,7 @@ export default function Navbar() {
                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 activeClassName="text-blue-500"
               >
-                Properties
+                Products
               </Link>
             </li>
             <li>
@@ -246,23 +235,16 @@ export default function Navbar() {
 
             <li>
               <Link
-                to="services"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link
                 to="contact"
                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Contact
               </Link>
             </li>
+            
             <li>
               <Link
-                to="chat"
+                to="ChatsPage"
                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Chat

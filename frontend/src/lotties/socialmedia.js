@@ -1,9 +1,9 @@
 import Lottie from "react-lottie";
-import animationData from "./landlord2.json";
+import animationData from "./socialmedia.json";
 
 import React from "react";
 
-export default function LottieFeature() {
+export default function Loginlottie() {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -14,8 +14,8 @@ export default function LottieFeature() {
   };
 
   return (
-    <div style={{marginLeft:50, marginTop:35}}>
-<Lottie options={defaultOptions} height={460} width={400} />
+    <div >
+<Lottie options={defaultOptions} marginLeft={40} height={500} width={500} />
     </div> 
   
   );
